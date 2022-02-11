@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 const detailCard = {
   border: '2px solid black',
   color: 'black',
