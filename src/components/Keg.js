@@ -13,7 +13,7 @@ function Keg(props){
   if (props.pintsLeft <= 0) {
     return (
       <React.Fragment>
-        <div className="kegBox">          
+        <div style={card}>          
           <h3>{props.brand} - {props.name}</h3>
           <h4>Price: $ {props.price}</h4>
           <h4>Alcohol Content: {props.alcoholContent}%</h4>
