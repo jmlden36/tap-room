@@ -20,6 +20,7 @@ Keg.propTypes = {
   price: PropTypes.number.isRequired,
   alcoholContent: PropTypes.number.isRequired,
   pintsLeft: PropTypes.number.isRequired,
+  id: PropTypes.string,
   whenKegClicked: PropTypes.func
 };
 
