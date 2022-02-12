@@ -10,6 +10,10 @@ function Keg(props){
     textAlign: 'center',
     maxWidth: '50vw'
   }
+  const almostOut = {
+    color: 'red'
+  }
+
   if (props.pintsLeft <= 0) {
     return (
       <React.Fragment>
@@ -17,8 +21,22 @@ function Keg(props){
           <h3>{props.brand} - {props.name}</h3>
           <h4>Price: $ {props.price}</h4>
           <h4>Alcohol Content: {props.alcoholContent}%</h4>
-          <h2>Pints left: SOLD OUT</h2>
+          <h2 style={almostOut}>Sold Out</h2>
           <button onClick={() => props.whenKegClicked(props.id)}>View Details</button>
+        </div>
+      </React.Fragment>
+    );
+  } else if (props.pintsLeft < 10) {
+    return (
+      <React.Fragment>
+        <div style={card}>          
+          <h3>{props.brand} - {props.name}</h3>
+          <h4>Price: $ {props.price}</h4>
+          <h4>Alcohol Content: {props.alcoholContent}%</h4>
+          <h2 style={almostOut}>Pints left: {props.pintsLeft}</h2>
+          <h2>Almost Empty!</h2>
+          <button onClick={() => props.whenKegClicked(props.id)}>View Details</button>
+          <button onClick={() => props.onClickSell(props.id)}>Sell Pint</button>
         </div>
       </React.Fragment>
     );
